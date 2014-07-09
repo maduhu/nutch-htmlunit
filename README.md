@@ -3,18 +3,18 @@ Nutch Htmlunit Plugin
 
 ### Introduction
 
-According to the implementation of [Apache Nutch](http://nutch.apache.org/) 2.1, we can't get dynamic HTML information from fetch pages including AJAX requests as it will ignore all AJAX requests.
+According to the implementation of [Apache Nutch](http://nutch.apache.org/) 1.7, we can't get dynamic HTML information from fetch pages including AJAX requests as it will ignore all AJAX requests.
 
 This plugin will use [Htmlunit](http://htmlunit.sourceforge.net/) to fetch whole page content with necessary dynamic AJAX requests. 
-It developed and tested with Apache Nutch 2.1, you can try it on other Nutch version or refactor the source codes as your design.
+It developed and tested with Apache Nutch 1.7, you can try it on other Nutch version or refactor the source codes as your design.
 
 ### Quick Start
 
-* Using ivy or maven or manually to copy htmlunit dependencies to your apache-nutch-2.1/lib, please refer: http://htmlunit.sourceforge.net/dependencies.html
+* Using ivy or maven or manually to copy htmlunit dependencies to your apache-nutch-1.7/lib, please refer: http://htmlunit.sourceforge.net/dependencies.html
 
-* Copy runtime/local/plugins/* to your apache-nutch-2.1/plugins
+* Copy runtime/local/plugins/* to your apache-nutch-1.7/plugins
 
-* Change your apache-nutch-2.1/conf/nutch-site.xml to use this plugin 'protocol-htmlunit', as below sample:
+* Change your apache-nutch-1.7/conf/nutch-site.xml to use this plugin 'protocol-htmlunit', as below sample:
 
 ```
 
@@ -33,11 +33,7 @@ It developed and tested with Apache Nutch 2.1, you can try it on other Nutch ver
 
 ```
 
-* Optionally, you can config apache-nutch-2.1/conf/regex-urlfilter.txt to control htmlunit only fetch specified urls including internal AJAX request. 
+* Optionally, you can config apache-nutch-1.7/conf/regex-urlfilter.txt to control htmlunit only fetch specified urls including internal AJAX request. 
 See detail: https://github.com/xautlx/nutch-htmlunit/blob/master/src/plugin/lib-htmlunit/src/java/org/apache/nutch/protocol/htmlunit/RegexHttpWebConnection.java
 
-* That's all. Now you can execute: apache-nutch-2.1/bin/nutch crawl urls, and see page contents parsed by htmlunit.
-
-### Contact Author
-
-* E-Mail: xautlx@hotmail.com
+* That's all. Now you can execute: apache-nutch-1.7/bin/nutch crawl urls, and see page contents parsed by htmlunit.
